@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
-    static int ans = 0;
+    static long ans = 0;
 
     static int[] peopleCountry;
 
@@ -28,7 +28,7 @@ public class Solution {
     }
 
     // Complete the journeyToMoon function below.
-    static int journeyToMoon(int n, int[][] astronaut) {
+    static long journeyToMoon(int n, int[][] astronaut) {
         // 그래프 생성        
         ArrayList<Integer>[] arr = new ArrayList[n];
         for(int i=0; i<n; i++){
@@ -57,17 +57,13 @@ public class Solution {
             peopleByCountry[peopleCountry[i]]++;
         }
 
-        for(int i=0; i<n; i++){     // 처음 뽑힌 사람
-            boolean[] check = new boolean[c_code];
-            for(int j=0; j<n; j++){
-                if(peopleCountry[i] != peopleCountry[j] && !check[peopleCountry[]]){
-                    check[peopleCountry[j]] = true;
-                    ans += peopleByCountry[peopleCountry[j]];
-                }
-            }
+        int sum = 0;
+        for(int i=0; i<c_code; i++){
+            ans += sum * peopleByCountry[i];
+            sum += peopleByCountry[i];
         }
 
-        return ans/2;
+        return ans;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -93,7 +89,7 @@ public class Solution {
             }
         }
 
-        int result = journeyToMoon(n, astronaut);
+        long result = journeyToMoon(n, astronaut);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
