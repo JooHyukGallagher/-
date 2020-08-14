@@ -1,5 +1,3 @@
-package algorithms.codingInterview.str;
-
 public class exam08_01 {
     static void setZeros(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
