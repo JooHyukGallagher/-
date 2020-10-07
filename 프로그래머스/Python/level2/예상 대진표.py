@@ -1,6 +1,3 @@
-import math
-
-
 def solution(n, a, b):
     answer = 1
 
